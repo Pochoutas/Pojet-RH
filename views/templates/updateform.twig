@@ -1,0 +1,34 @@
+{% extends "../base.twig" %}
+
+{% block style %}
+<link rel="stylesheet" href="../loginstyle.css">
+{% endblock %}
+{% block title %}
+<title>RH for you: Entrer un employé </title>
+{% endblock %}
+{% block header %}
+<h1 class="animate__animated animate__slideInLeft">Ressources Humaine</br>
+				for you</h1>
+{% endblock %}
+{% block main %}
+
+<form method="post" action="/employee/{{employee.id}}" enctype='multipart/form-data'>
+    <h2> Modifié {{employee.name}} </h2>
+<div>
+    <label for="picture">Modifier la photo de l'employé:</lable>
+    <input type="file" id="picture" name="picture" value="{{employee.picture}}">
+</div>
+<div>
+    <label for="name">  Modifier Nom et Prénom:</lable>
+    <input type="text" id="name" name="name" value="{{employee.name}}">
+</div>
+<div>
+    <label for="post">Modifier le Poste:</lable>
+    <input type="text" id="post" name="post" value="{{employee.post}}">
+</div>
+<a href="/disblame/{{employee.id}}">Retirer un blame</a>
+
+    <button type="submit"> Valider </button>
+    </form>
+   
+{% endblock %}

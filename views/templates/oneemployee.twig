@@ -1,0 +1,25 @@
+{% extends "../base.twig" %}
+
+{% block style %}
+<link rel="stylesheet" href="../style.css">
+{% endblock %}
+{% block title %}
+<title>{{employee.name}}</title>
+{% endblock %}
+{% block header %}{% endblock %}
+{% block main %}
+<form action="/employeeupdate/{{employee.id}}" method="post" enctype='multipart/form-data'>
+    <label for="picture">Ajouter une photo de l'employé:</lable>
+    <input type="file" id="picture" name="picture">
+
+    <label for="name"> Nom et Prénom:</lable>
+    <input type="text" id="name" name="name" value="{{employee.name}}">
+
+    <label for="post">Poste:</lable>
+    <input type="text" id="post" name="post" value="{{employee.post}}">
+
+    <label for="blame">Nombre de blame:</lable>
+    <input type="number" id="blame" name="blame" value="{{employee.blame}}">
+    <input type="submit" value="Modifier">
+</form>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "../base.twig" %}
+
+{% block style %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<link rel="stylesheet" href="./style.css">
+{% endblock %}
+{% block title %}
+	<title>RH for you</title>
+{% endblock %}
+{% block header %}{% endblock %}
+{% block main %}
+
+	
+	<article id="beginig">
+		<h1 class="animate__animated animate__slideInLeft">Ressources Humaine</br>
+		for you</h1>
+	<div id="align">
+		<form class="connect" action="/companylogin">
+			<button type="submit">Se connecter</button>
+		</form>
+		<form class="connect" action="/addcompany">
+			<button type="submit">
+				S'inscrire</button>
+		</form>
+	</div>
+</article>
+<article id="participate">
+		<ul>
+			<h2>
+				Les entreprises participantes:</h2>
+			{% for company in tata %}
+				<li>{{company.name}}</li>
+			{% endfor %}
+		</ul>
+	</article>
+
+{% endblock %}
